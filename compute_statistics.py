@@ -4,7 +4,9 @@ import sys
 import time
 import logging
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger("stats_logger")
+logging.basicConfig()
+logger.setLevel(logging.INFO)
 
 
 def open_and_read_file(filename: str, numbers: list, errors: list) -> tuple[list, list]:
@@ -115,4 +117,5 @@ def main():
 
 
 if __name__ == "__main__":
+    logger.info("This module is for compute statistics from a file.")
     main()
